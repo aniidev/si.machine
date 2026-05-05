@@ -1,0 +1,33 @@
+{
+  "app": {
+    "name": "Overlay Template Demo",
+    "description": "Electron panel demo using the same modular pipeline."
+  },
+  "input": {
+    "type": "electron-screen-capture",
+    "options": {
+      "types": ["screen"],
+      "thumbnailSize": {
+        "width": 1440,
+        "height": 900
+      }
+    }
+  },
+  "processing": {
+    "type": "vision-passthrough"
+  },
+  "ai": {
+    "type": "echo",
+    "options": {
+      "prefix": "Screen capture response:"
+    }
+  },
+  "output": {
+    "type": "electron-overlay",
+    "options": {
+      "width": 460,
+      "height": 620,
+      "alwaysOnTop": true
+    }
+  }
+}

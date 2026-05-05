@@ -1,0 +1,28 @@
+{
+  "name": "ai-screen-assistant-template",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reusable template for local screen assistant and AI overlay apps.",
+  "main": "src/ui/electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --config configs/social-media-coach.groq.json",
+    "demo": "electron . --config configs/sample.text-panel.json",
+    "cli": "node src/cli.js --config configs/sample.cli.json",
+    "check": "node scripts/smoke-test.js"
+  },
+  "keywords": [
+    "electron",
+    "ai",
+    "screen-capture",
+    "overlay",
+    "template"
+  ],
+  "dependencies": {
+    "electron": "^31.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

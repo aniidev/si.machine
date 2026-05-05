@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "CLI Template Demo",
+    "description": "Runs the generic pipeline with a text input and deterministic AI output."
+  },
+  "input": {
+    "type": "text-file",
+    "options": {
+      "path": "examples/input/sample-note.txt"
+    }
+  },
+  "processing": {
+    "type": "raw-text"
+  },
+  "ai": {
+    "type": "echo",
+    "options": {
+      "prefix": "AI provider placeholder:"
+    }
+  },
+  "output": {
+    "type": "cli"
+  }
+}

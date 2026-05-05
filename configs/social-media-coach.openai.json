@@ -1,0 +1,48 @@
+{
+  "app": {
+    "name": "Instagram Friend Overlay",
+    "modeLabel": "Instagram",
+    "description": "A tiny Instagram overlay that suggests friendly, low-pressure actions from the visible screen."
+  },
+  "input": {
+    "type": "electron-screen-capture",
+    "options": {
+      "types": ["screen"],
+      "thumbnailSize": {
+        "width": 1440,
+        "height": 900
+      }
+    }
+  },
+  "processing": {
+    "type": "vision-passthrough"
+  },
+  "ai": {
+    "type": "openai-compatible",
+    "options": {
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "model": "gpt-4.1-mini",
+      "systemPrompt": "You are a tiny Instagram friendship coach overlay. Look only at the visible screenshot. Return exactly one short helpful line. If a DM, comment box, story reply, or message thread is visible, write the exact friendly message the user could send, in quotes, under 18 words. Make it natural, low-pressure, and based on visible context. If no message opportunity is visible, suggest one specific action under 12 words, like who to follow, which story to reply to, or what profile detail to notice. Do not be creepy, manipulative, spammy, flirty, invasive, overly familiar, or pushy. No bullets. No preamble. Do not mention hidden context."
+    }
+  },
+  "output": {
+    "type": "electron-overlay",
+    "options": {
+      "width": 520,
+      "height": 46,
+      "minWidth": 300,
+      "minHeight": 40,
+      "alwaysOnTop": true,
+      "frame": false,
+      "transparent": true,
+      "resizable": false,
+      "autoRun": true,
+      "watchOnLaunch": true,
+      "showPreview": false,
+      "screenPollMs": 1200,
+      "minAiIntervalMs": 6000,
+      "intervalMs": 20000
+    }
+  }
+}

@@ -1,0 +1,4 @@
+This is sample captured text.
+
+The framework should treat it like screen/OCR/model input without caring where it came from.
+Replace the input, processing, AI, or output plugins to create a different assistant.

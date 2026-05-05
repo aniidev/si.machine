@@ -1,0 +1,36 @@
+{
+  "app": {
+    "name": "Screen Reader Vision Demo",
+    "description": "Captures the screen and sends it to an OpenAI-compatible vision model."
+  },
+  "input": {
+    "type": "electron-screen-capture",
+    "options": {
+      "types": ["screen"],
+      "thumbnailSize": {
+        "width": 1440,
+        "height": 900
+      }
+    }
+  },
+  "processing": {
+    "type": "vision-passthrough"
+  },
+  "ai": {
+    "type": "openai-compatible",
+    "options": {
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "baseUrl": "https://api.openai.com/v1",
+      "model": "gpt-4.1-mini",
+      "systemPrompt": "You are a screen-reading desktop assistant. Read visible text, identify important UI elements, and summarize what the user is looking at. Be concise and practical."
+    }
+  },
+  "output": {
+    "type": "electron-overlay",
+    "options": {
+      "width": 460,
+      "height": 620,
+      "alwaysOnTop": true
+    }
+  }
+}
