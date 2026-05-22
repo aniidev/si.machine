@@ -3,13 +3,64 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Instagram Friend Overlay</title>
+    <title>InstaWingman</title>
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <main class="overlay" title="Double-click to refresh">
+    <main id="setupView" class="setup-shell" hidden>
+      <header class="setup-header">
+        <div>
+          <p class="eyebrow">InstaWingman</p>
+          <h1>Set Your Type Profile</h1>
+        </div>
+        <button id="setupCloseButton" class="icon-button" type="button">x</button>
+      </header>
+
+      <section class="setup-form">
+        <label>
+          Mode
+          <select id="profileSelect"></select>
+        </label>
+        <label>
+          Goal
+          <input id="goalInput" type="text" placeholder="dating, friends, networking">
+        </label>
+        <label>
+          Age range
+          <input id="ageInput" type="text" placeholder="22-28">
+        </label>
+        <label>
+          Gender preference
+          <input id="genderInput" type="text" placeholder="women, men, any">
+        </label>
+        <label>
+          Location
+          <input id="locationInput" type="text" placeholder="within 50 miles">
+        </label>
+        <label>
+          Traits you like
+          <textarea id="traitsInput" rows="4" placeholder="outdoor adventurous, sarcastic humor, fitness-oriented"></textarea>
+        </label>
+        <label>
+          Dealbreakers
+          <textarea id="dealbreakersInput" rows="3" placeholder="heavy partying, rude comments, no shared interests"></textarea>
+        </label>
+        <label>
+          Message tone
+          <input id="toneInput" type="text" placeholder="playful, chill, witty, direct">
+        </label>
+      </section>
+
+      <footer class="setup-footer">
+        <button id="saveProfileButton" class="primary" type="button">Save & Continue</button>
+      </footer>
+    </main>
+
+    <main id="compactView" class="compact-shell" hidden>
       <span id="statusDot" class="status-dot" aria-hidden="true"></span>
-      <p id="tip" class="tip">Looking for friend-making opportunities...</p>
+      <p id="tipText" class="tip-text">Ready when you are.</p>
+      <button id="editButton" class="ghost-button" type="button">Edit</button>
+      <button id="startButton" class="primary compact-button" type="button">Start</button>
     </main>
 
     <script src="./renderer.js"></script>

@@ -20,6 +20,12 @@ export async function runPipeline(registry, context) {
       runtimePrompt
     };
   }
+  if (context.runtime?.profile) {
+    processed.metadata = {
+      ...processed.metadata,
+      activeProfile: context.runtime.profile
+    };
+  }
   events.emit("pipeline:process", processed);
 
   logger.info("Calling AI provider", { type: config.ai.type });

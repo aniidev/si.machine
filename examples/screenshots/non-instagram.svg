@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560">
+  <rect width="900" height="560" fill="#f2f2f2"/>
+  <text x="40" y="70" font-family="Arial" font-size="30">Spreadsheet quarterly budget</text>
+  <text x="40" y="145" font-family="Arial" font-size="24">Revenue, expenses, forecast</text>
+</svg>

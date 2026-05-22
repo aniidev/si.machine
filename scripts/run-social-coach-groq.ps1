@@ -26,4 +26,4 @@ if (-not (Test-Path $electron)) {
   throw "Electron is not installed. Run npm install after fixing npm, or install dependencies with another package manager."
 }
 
-& $electron . --config configs/social-media-coach.groq.json
+& $electron . --config configs/instawingman.groq.json

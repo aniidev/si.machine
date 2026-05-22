@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560">
+  <rect width="900" height="560" fill="#fafafa"/>
+  <text x="40" y="70" font-family="Arial" font-size="30">Instagram Profile - Priya</text>
+  <text x="40" y="145" font-family="Arial" font-size="24">Bio: climbing, matcha, community gardens</text>
+  <text x="40" y="205" font-family="Arial" font-size="24">Mutuals: Alex, Noor</text>
+  <text x="40" y="300" font-family="Arial" font-size="22">Suggested for you</text>
+</svg>

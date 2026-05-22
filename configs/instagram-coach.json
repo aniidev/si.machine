@@ -1,0 +1,36 @@
+{
+  "app": { "name": "Instagram Coach v1" },
+  "input": {
+    "type": "desktop-capture",
+    "options": { "intervalMs": 8000, "triggerOn": "manual" }
+  },
+  "processing": {
+    "type": "vision-passthrough",
+    "options": { "ocr": true }
+  },
+  "ai": {
+    "type": "instagram-coach",
+    "options": {
+      "underlyingProvider": "openai",
+      "model": "gpt-4o",
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "maxRegenerations": 2,
+      "minRubricPass": 6,
+      "logFailures": true
+    }
+  },
+  "output": {
+    "type": "electron-overlay",
+    "options": {
+      "format": "card",
+      "width": 460,
+      "height": 620,
+      "minWidth": 360,
+      "minHeight": 420,
+      "alwaysOnTop": true,
+      "frame": false,
+      "transparent": true,
+      "resizable": true
+    }
+  }
+}

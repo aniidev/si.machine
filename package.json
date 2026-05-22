@@ -7,9 +7,12 @@
   "main": "src/ui/electron/main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "electron . --config configs/social-media-coach.groq.json",
+    "dev": "electron . --config configs/instawingman.groq.json",
+    "coach": "electron . --config configs/instagram-coach.groq.json",
     "demo": "electron . --config configs/sample.text-panel.json",
     "cli": "node src/cli.js --config configs/sample.cli.json",
+    "test:coach": "node scripts/test-coach.js",
+    "test:coach:fixture": "node src/cli.js --config configs/instagram-coach.fixture.json",
     "check": "node scripts/smoke-test.js"
   },
   "keywords": [

@@ -1,0 +1,28 @@
+{
+  "app": { "name": "Instagram Coach Fixture" },
+  "input": {
+    "type": "image-file",
+    "options": {
+      "path": "examples/screenshots/dm-existing.svg",
+      "contentType": "image/svg+xml"
+    }
+  },
+  "processing": {
+    "type": "vision-passthrough",
+    "options": { "ocr": true }
+  },
+  "ai": {
+    "type": "instagram-coach",
+    "options": {
+      "underlyingProvider": "openai",
+      "model": "gpt-4o",
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "maxRegenerations": 2,
+      "minRubricPass": 6,
+      "logFailures": true
+    }
+  },
+  "output": {
+    "type": "cli"
+  }
+}

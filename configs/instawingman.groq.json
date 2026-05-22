@@ -1,0 +1,52 @@
+{
+  "app": { "name": "InstaWingman" },
+  "input": {
+    "type": "desktop-capture",
+    "options": {
+      "intervalMs": 8000,
+      "triggerOn": "screen-change",
+      "types": ["screen"],
+      "thumbnailSize": {
+        "width": 2560,
+        "height": 1600
+      }
+    }
+  },
+  "processing": {
+    "type": "vision-passthrough",
+    "options": { "ocr": true }
+  },
+  "ai": {
+    "type": "instawingman-coach",
+    "options": {
+      "underlyingProvider": "groq",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "apiKeyEnv": "GROQ_API_KEY",
+      "maxRegenerations": 2,
+      "logFailures": true
+    }
+  },
+  "output": {
+    "type": "electron-overlay",
+    "options": {
+      "format": "instawingman",
+      "width": 420,
+      "height": 680,
+      "minWidth": 360,
+      "minHeight": 520,
+      "compactWidth": 560,
+      "compactHeight": 56,
+      "compactMinWidth": 360,
+      "compactMinHeight": 46,
+      "compactResizable": false,
+      "alwaysOnTop": true,
+      "frame": false,
+      "transparent": true,
+      "resizable": true,
+      "autoRun": false,
+      "watchOnLaunch": false,
+      "screenPollMs": 1200,
+      "minAiIntervalMs": 7000
+    }
+  }
+}

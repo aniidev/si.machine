@@ -2,6 +2,7 @@ import { app, BrowserWindow, desktopCapturer, ipcMain } from "electron";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadConfig } from "../../core/config-loader.js";
+import { getActiveProfile, loadProfiles, saveProfiles } from "../../core/profile-store.js";
 import { runConfig } from "../../run-config.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -49,12 +50,35 @@ async function createWindow() {
     window.close();
   });
 
+  ipcMain.removeHandler("window:set-mode");
+  ipcMain.handle("window:set-mode", async (_event, mode) => {
+    const options = loadedConfig.config.output.options || {};
+    if (mode === "compact") {
+      window.setResizable(Boolean(options.compactResizable));
+      window.setMinimumSize(options.compactMinWidth || 360, options.compactMinHeight || 46);
+      window.setSize(options.compactWidth || 560, options.compactHeight || 56, true);
+      return;
+    }
+
+    window.setResizable(options.resizable ?? true);
+    window.setMinimumSize(options.minWidth || 360, options.minHeight || 520);
+    window.setSize(options.width || 420, options.height || 680, true);
+  });
+
+  ipcMain.removeHandler("profiles:load");
+  ipcMain.handle("profiles:load", async () => loadProfiles(process.cwd()));
+
+  ipcMain.removeHandler("profiles:save");
+  ipcMain.handle("profiles:save", async (_event, data) => saveProfiles(data, process.cwd()));
+
   ipcMain.removeHandler("pipeline:run");
   ipcMain.handle("pipeline:run", async (_event, options = {}) => {
     try {
+      const activeProfile = await getActiveProfile(process.cwd());
       const output = await runConfig(configPath, {
         runtime: {
-          prompt: options.prompt
+          prompt: options.prompt,
+          profile: activeProfile
         },
         electron: {
           desktopCapturer,

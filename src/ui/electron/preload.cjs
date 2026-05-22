@@ -18,5 +18,14 @@ contextBridge.exposeInMainWorld("assistant", {
   },
   close() {
     return ipcRenderer.invoke("window:close");
+  },
+  setWindowMode(mode) {
+    return ipcRenderer.invoke("window:set-mode", mode);
+  },
+  loadProfiles() {
+    return ipcRenderer.invoke("profiles:load");
+  },
+  saveProfiles(data) {
+    return ipcRenderer.invoke("profiles:save", data);
   }
 });

@@ -24,7 +24,7 @@ if (-not (Test-Path $electron)) {
 
 $config = "configs/sample.text-panel.json"
 if ($env:GROQ_API_KEY) {
-  $config = "configs/social-media-coach.groq.json"
+  $config = "configs/instawingman.groq.json"
 }
 
 Write-Host "Launching $config"

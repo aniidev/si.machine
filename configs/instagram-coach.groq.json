@@ -1,0 +1,40 @@
+{
+  "app": { "name": "Instagram Coach v1" },
+  "input": {
+    "type": "desktop-capture",
+    "options": { "intervalMs": 8000, "triggerOn": "screen-change" }
+  },
+  "processing": {
+    "type": "vision-passthrough",
+    "options": { "ocr": true }
+  },
+  "ai": {
+    "type": "instagram-coach",
+    "options": {
+      "underlyingProvider": "groq",
+      "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+      "apiKeyEnv": "GROQ_API_KEY",
+      "maxRegenerations": 2,
+      "minRubricPass": 6,
+      "logFailures": true
+    }
+  },
+  "output": {
+    "type": "electron-overlay",
+    "options": {
+      "format": "line",
+      "width": 560,
+      "height": 46,
+      "minWidth": 320,
+      "minHeight": 40,
+      "alwaysOnTop": true,
+      "frame": false,
+      "transparent": true,
+      "resizable": false,
+      "autoRun": true,
+      "watchOnLaunch": true,
+      "screenPollMs": 1200,
+      "minAiIntervalMs": 6000
+    }
+  }
+}

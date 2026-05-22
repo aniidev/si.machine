@@ -1,0 +1,39 @@
+{
+  "setupComplete": true,
+  "activeProfileId": "girlfriend-mode",
+  "profiles": [
+    {
+      "id": "girlfriend-mode",
+      "name": "Girlfriend Mode",
+      "goal": "dating",
+      "ageRange": "18-21",
+      "genderPreference": "women",
+      "locationPreference": "",
+      "desiredTraits": "",
+      "dealbreakers": "",
+      "tone": ""
+    },
+    {
+      "id": "gym-friends",
+      "name": "Gym Friends",
+      "goal": "friends",
+      "ageRange": "20-35",
+      "genderPreference": "any",
+      "locationPreference": "nearby",
+      "desiredTraits": "fitness-oriented, consistent, positive, likes lifting or running",
+      "dealbreakers": "ego-lifting, negativity, spammy influencer behavior",
+      "tone": "direct, friendly, low-pressure"
+    },
+    {
+      "id": "photography-friends",
+      "name": "Photography Friends",
+      "goal": "friends",
+      "ageRange": "20-35",
+      "genderPreference": "any",
+      "locationPreference": "same city",
+      "desiredTraits": "street photography, creative, curious, likes photowalks",
+      "dealbreakers": "clout chasing, no visible creative interest",
+      "tone": "curious, thoughtful, low-key"
+    }
+  ]
+}
